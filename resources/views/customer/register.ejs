@@ -1,0 +1,28 @@
+
+<div class=" heigth d-flex align-items-center justify-content-center">
+    <div class="login-from w-100 py-5 m-auto border border-subtle bg-light-subtle shadow-lg bg-body-tertiary rounded">
+        <form class="" action="/register" method="post">
+            <h1 class="h3 mb-4 fw-normal">Register here </h1>
+            <span class="fs-5 text text-danger"><%= messages.error %></span>
+            <div class="form-floating mb-4">
+                <input type="text" name="name" value="<%= messages.name %>" class="form-control" id="floatingInput" placeholder="name@example.com" data-nlok-ref-guid="ca38f2ac-5325-4dd4-c67e-e63ee4e7f24d" autocomplete="off">
+                <label for="floatingInput">Name</label>
+              </div>
+        
+            <div class="form-floating mb-4">
+              <input type="email" name="email" value="<%= messages.email %>" class="form-control" id="floatingInput" placeholder="name@example.com" data-nlok-ref-guid="ca38f2ac-5325-4dd4-c67e-e63ee4e7f24d" autocomplete="off">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-4">
+              <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" data-nlok-ref-guid="6447059a-7a21-4ccb-8c5f-83a97bebd548" autocomplete="off">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <div class="text-end d-flex justify-content-between">
+            <button class="btn " type="submit">Register</button>
+            <a href="/login" class="text-decoration-none colour">Already have account?</a>
+            </div>
+            <!-- <p class="mt-5 mb-3 text-body-secondary text-center">© <%=new Date().getFullYear()%></p> -->
+
+          </form>
+    </div>
+</div>

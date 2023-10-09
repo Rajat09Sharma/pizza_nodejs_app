@@ -1,0 +1,59 @@
+
+<section class="cart">
+
+    <% if(session.cart) {%>
+    <div class="order py-5">
+        <div class="d-flex align-items-center border border-top-0 border-end-0 border-start-0 
+        border-dark-subtle pb-3">
+            <img src="/images/size.png" class="order-image" alt="order-Image">
+            <h1 class="order-heading">Order summary</h1>
+        </div>
+        <% for(let pizza of Object.values(session.cart.items)) { %>
+        <divc class="pizza-list">
+            <div class="d-flex align-items-center my-5">
+                <img src="/images/<%= pizza.item.image %>" class="ordered-pizza-image" alt="ordered-pizza-image">
+                <div class=" flex-grow-1 ms-3">
+                    <h3><%= pizza.item.name %></h3>
+                    <span><%=pizza.item.size%></span>
+                </div>
+                <span class="flex-grow-1"><%= pizza.qty %> Pcs</span>
+                <span class="fs-4 fw-bold">₹<%= pizza.item.price * pizza.qty %></span>
+            </div>
+        <% } %>
+            <hr>
+            <div class="text-end py-3">
+                <div >
+                    <span class="fs-4 fw-bold">Total Amount:</span>
+                    <span class="fs-3 fw-bold ms-2 amount">₹<%= session.cart.totalPrice %></span>
+                </div>
+                <% if(user) {%>
+                <div>
+                    <form action="/order" method="post" class="mt-4">
+                        <input name="phone" class="border border-dark-subtle form-control w-50 ms-auto mb-3" type="number" placeholder="Phone Number">
+                        <input name="address" class="border border-dark-subtle form-control w-50 ms-auto" type="text" placeholder="Address">
+                        <button class="order-btn mt-3" type="submit">Order Now</button>
+                    </form>
+                </div>
+                <% }else { %>
+                <a type="button" href="/login" class="order-btn text-decoration-none mt-3">Login to continue</a>
+                <% } %>
+            </div>
+            
+        </div>    
+    </div>
+    <% } else { %>
+    <div id="empty-cart">
+        <div class="empty-cart-container">
+            <h1>Cart Empty 😕</h1>
+            <p class="empty-cart-para">You probably haven't ordered a pizza yet. <br>
+                To order a pizza, go to the main page.</p>
+            <img src="/images/empty-cart.png" class="empty-cart-image" alt="empty-cart">
+            <div class="mt-5">
+                <a href="/" class="btn">Go Back</a>
+            </div>
+            
+    
+        </div>
+    </div>
+    <% } %>
+</section>

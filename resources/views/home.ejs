@@ -1,0 +1,157 @@
+
+    <section id="featured">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/featured.png" class=" w-75" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/featured2.png" class="w-75"  alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/featured3.png" class="w-75" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    </section>
+
+    <section id="menu">
+      <h1 class="menu-heading">All Pizzas</h1>
+
+      <div class=""> 
+
+        <div class="row">
+          <%pizzas.forEach((pizza)=>{ %>
+            <div class="col-md-4 col-lg-3 space">
+              <img src="/images/<%= pizza.image %>"class="d-flex image" alt="pizza-image">
+              
+              <div class="data">
+                <h2 class="pizza-name"><%= pizza.name %></h2>
+                <span class="size"><%= pizza.size %></span>
+              </div>
+  
+              <div class="prize">
+                  <span>₹<%= pizza.price %></span>
+                  <button data-pizza="<%=JSON.stringify(pizza)%>" class="btn  add-to-cart">
+                    <span>+</span>
+                    <span>Add</span>
+                  </button>
+              </div>
+            </div>
+          <%})%>
+           
+          <!-- <div class="col-md-4 col-lg-3 space">
+            <img src="/images/pizza.png"class="d-flex image" alt="">
+            
+            <div class="data">
+              <h2 class="pizza-name">Magrita</h2>
+              <span class="size">small</span>
+            </div>
+
+            <div class="prize">
+                <span>$25</span>
+                <button class="btn  add-to-cart">
+                  <span>+</span>
+                  <span>Add</span>
+                </button>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-md-4  col-lg-3 space">
+            <img src="/images/pizza.png"class="d-flex image" alt="">
+            
+            <div class="data">
+              <h2 class="pizza-name">Magrita</h2>
+              <span class="size">small</span>
+            </div>
+
+            <div class="prize">
+                <span>$25</span>
+                <button class="btn  add-to-cart">
+                  <span>+</span>
+                  <span>Add</span>
+                </button>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-lg-3 space">
+            <img src="/images/pizza.png"class="d-flex  image" alt="">
+            
+            <div class="data">
+              <h2 class="pizza-name">Magrita</h2>
+              <span class="size">small</span>
+            </div>
+
+            <div class="prize">
+                <span>$25</span>
+                <button class="btn  add-to-cart">
+                  <span>+</span>
+                  <span>Add</span>
+                </button>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-lg-3 space">
+            <img src="/images/pizza.png"class="d-flex  image" alt="">
+            
+            <div class="data">
+              <h2 class="pizza-name">Magrita</h2>
+              <span class="size">small</span>
+            </div>
+
+            <div class="prize">
+                <span>$25</span>
+                <button class="btn  add-to-cart">
+                  <span>+</span>
+                  <span>Add</span>
+                </button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 space">
+            <img src="/images/pizza.png"class="d-flex  image" alt="">
+            
+            <div class="data">
+              <h2 class="pizza-name">Magrita</h2>
+              <span class="size">small</span>
+            </div>
+
+            <div class="prize">
+                <span>$25</span>
+                <button class="btn  add-to-cart">
+                  <span>+</span>
+                  <span>Add</span>
+                </button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 space">
+            <img src="/images/pizza.png"class="d-flex image" alt="">
+            
+            <div class="data">
+              <h2 class="pizza-name">Magrita</h2>
+              <span class="size">small</span>
+            </div>
+
+            <div class="prize">
+                <span>$25</span>
+                <button class="btn  add-to-cart">
+                  <span>+</span>
+                  <span>Add</span>
+                </button>
+            </div>
+          </div> -->
+
+          
+        </div>
+        
+      </div>
+
+    </section>
+  
